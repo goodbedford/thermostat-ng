@@ -1,0 +1,9 @@
+## Directory-based project format:
+.idea/
+
+*.log
+.grunt
+.env
+**/*/.DS_Store
+
+/node_modules/

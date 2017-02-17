@@ -1,0 +1,16 @@
+
+{
+  "homeId": "1",
+  "name": "Casa Grande",
+  "currentRoomId": "1",
+  "rooms": [
+    {
+      "roomId": "1",
+      "room": "tv room",
+      "thermostat": "50",
+      "curtains": "false",
+      "lights": "true",
+      "isActive": "true"
+    }
+  ]
+}
