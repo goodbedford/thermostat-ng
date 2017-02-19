@@ -2,20 +2,24 @@
     "use strict";
 
     angular
-        .module("gb")
+        .module("thermostat")
         .controller("HomeController", HomeController);
 
-    HomeController.$inject = ["$http"];
+    HomeController.$inject = ["$http", "$stateParams", "HomeService", "homeResolve"];
 
-    function HomeController($http) {
-        var home = this;
-        home.name = "frankie";
-        home.cake = "cake";
-        home.job = "ad ops";
+    function HomeController($http, $stateParams, HomeService, homeResolve) {
+        var vm = this;
+        vm.changeRoom = changeRoom;
+        vm.currentRoom;
+        vm.home = homeResolve;
+        vm.date = (new Date()).toDateString();
 
-        $http.get("./src/home.json")
-          .then(function(resp) {
-            home.home = resp.data;
-          });
+        function getCurrent() {
+          getRoomById(vm.stateId);
+        }
+        function changeRoom(id) {
+              vm.currentRoom = HomeService.getRoomById(id);
+        }
+
     }
 })();

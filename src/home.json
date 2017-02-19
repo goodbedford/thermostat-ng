@@ -1,16 +1,24 @@
 
 {
-  "homeId": "1",
+  "homeId": 1,
   "name": "Casa Grande",
-  "currentRoomId": "1",
+  "currentRoomId": 1,
   "rooms": [
     {
-      "roomId": "1",
-      "room": "tv room",
-      "thermostat": "50",
-      "curtains": "false",
-      "lights": "true",
-      "isActive": "true"
+      "roomId": 1,
+      "name": "tv room",
+      "thermostat": 50,
+      "curtains": false,
+      "lights": true,
+      "isActive": true
+    },
+    {
+      "roomId": 2,
+      "name": "living room",
+      "thermostat": 60,
+      "curtains": false,
+      "lights": true,
+      "isActive": true
     }
   ]
 }

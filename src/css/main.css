@@ -1,0 +1,375 @@
+/*-------------------------------------------------------*/
+
+
+/*base*/
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h2 {
+  font-size: 80px;
+}
+
+.block {
+  height: 360px;
+}
+
+
+/*-------------------------------------------------------*/
+
+
+/*home*/
+
+
+/*-------------------------------------------------------*/
+
+.home {}
+
+.home--md {
+  margin: 20px auto;
+  width: 700px;
+}
+
+.home__header {
+  align-items: center;
+  background-color: black;
+  border-bottom: 2px solid rgb(100, 200, 200);
+  color: rgb(100, 200, 200);
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 300;
+  height: 60px;
+  padding: 0 20px;
+}
+
+.home__section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home__panel-header {
+  align-items: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  color: silver;
+  display: flex;
+  flex: 1;
+  font-size: 24px;
+  justify-content: center;
+  padding: 10px;
+  text-transform: uppercase;
+  transition: 0.3s background-color;
+}
+
+.home__panel-item {
+  align-items: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  color: silver;
+  display: flex;
+  flex: 1;
+  font-size: 24px;
+  justify-content: space-between;
+  padding: 10px 20px;
+  text-transform: capitalize;
+  transition: 0.3s all;
+}
+
+.home__panel-item:hover {
+  background-color: rgb(100, 200, 200);
+  color: black;
+}
+
+.home__panel-item--active {
+  border-left: 10px solid black;
+  border-right: 0px solid;
+  background-color: rgb(47, 47, 47);
+  color: rgb(100, 200, 200);
+}
+
+.home__panel-rooms {
+  background-color: rgb(63, 67, 74);
+  border: 1px solid black;
+  /*border-right: 0px;*/
+  flex: 1;
+  /*padding: 10px;*/
+}
+
+.home__panel-controls {
+  background-color: rgb(47, 47, 47);
+  border: 1px solid black;
+  border-left: 0px;
+  flex: 1;
+  padding: 20px;
+}
+
+
+/*-------------------------------------------------------*/
+
+
+/*room*/
+
+
+/*-------------------------------------------------------*/
+
+.room {}
+
+.room__controls {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.room__section {
+  display: block;
+}
+
+
+/*-------------------------------------------------------*/
+
+
+/*switch*/
+
+
+/*-------------------------------------------------------*/
+
+.switch {
+  align-items: center;
+  background-color: tomato;
+  display: flex;
+  justify-content: flex-end;
+  min-height: 50px;
+  max-width: 50px;
+  position: relative;
+  transform: translate(25px, 0);
+  transition: 0.5s transform;
+}
+
+.switch:before {
+  align-items: center;
+  background-color: inherit;
+  border-radius: 50%;
+  color: white;
+  content: "ON";
+  display: flex;
+  justify-content: center;
+  min-height: 50px;
+  min-width: 50px;
+  position: absolute;
+  left: -25px;
+  top: 0;
+  transition: 0.5s transform;
+}
+
+.switch:after {
+  align-items: center;
+  background-color: inherit;
+  border-radius: 50%;
+  content: "OFF";
+  color: white;
+  display: flex;
+  justify-content: center;
+  min-height: 50px;
+  min-width: 50px;
+  position: absolute;
+  right: -25px;
+  top: 0;
+}
+
+.switch--on {
+  background-color: green;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.switch__ball {
+  background-color: white;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  min-height: 48px;
+  min-width: 48px;
+  position: relative;
+  transition: 0.3s all linear;
+  z-index: 50;
+}
+
+.switch__ball--off {
+  left: -23px;
+}
+
+.switch__ball--on {
+  left: 23px;
+}
+
+
+/*-------------------------------------------------------*/
+
+
+/*temp*/
+
+
+/*-------------------------------------------------------*/
+
+.temp {
+  display: block;
+  height: 200px;
+  padding: 20px;
+  width: 200px;
+}
+
+.temp--center {
+  margin: auto;
+}
+
+.temp__input {
+  border: 2px solid black;
+  font-size: 50px;
+  padding: 10px;
+  text-indent: 25%;
+  width: 60%;
+}
+
+.temp__section {
+  align-items: center;
+  border: 1px solid black;
+  display: flex;
+  /*flex: 1;*/
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  width: 75%;
+}
+
+.temp__section--bg-black {
+  background-color: black;
+}
+
+.temp__section-flex {
+  border-radius: 50%;
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.temp__section-flex--temp-control {
+  border: 10px solid black;
+  box-shadow: 0 0 0 2px rgb(100, 200, 200);
+  position: relative;
+}
+
+.temp__text {
+  color: rgb(100, 200, 200);
+  font-size: 50px;
+  position: relative;
+}
+
+.temp__text:after {
+  color: inherit;
+  content: "o";
+  font-size: 25px;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  z-index: 20;
+}
+
+.temp__text--silver {
+  color: silver;
+}
+
+
+/*-------------------------------------------------------*/
+
+
+/*button*/
+
+
+/*-------------------------------------------------------*/
+
+.button {
+  align-items: center;
+  border: 1px solid black;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  transition: 0.3s background-color;
+}
+
+.button:hover {
+  background-color: rgb(100, 150, 150);
+}
+
+.button.button--active {
+  background-color: rgb(100, 200, 200);
+  color: black;
+}
+
+.button--default {
+  background-color: rgb(63, 67, 74);
+  color: silver;
+  flex: 1;
+  min-height: 50px;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.button--temp-control {
+  border-right: 0px;
+  flex: 1;
+  min-height: 50px;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.button__group {
+  align-items: flex-start;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.button__group--column {
+  align-items: stretch;
+  flex: 1;
+  flex-direction: column;
+}
+
+.button__group-title {
+  color: silver;
+  font-size: 18px;
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.button__icon {
+  font-size: 20px;
+  position: absolute;
+}
+
+.button__icon--minus {
+  top: 20%;
+}
+
+.button__icon--plus {
+  bottom: 20%;
+}
+
+.button__section {
+  display: block;
+  margin: 10px 0;
+  text-align: center;
+  width: 150px;
+}
+
+.carbon-bg {
+  background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
+  background-color: #282828;
+  background-size: 16px 16px;
+}

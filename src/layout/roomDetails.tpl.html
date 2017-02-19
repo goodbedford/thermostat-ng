@@ -1,0 +1,45 @@
+<div class="room" data-room-name="{{roomDetailsCtrl.currentRoom.name}}" data-room-id="{{roomDetailsCtrl.currentRoom.roomId}}">
+  <div class="room__section">
+    <div class="temp temp--center">
+      <div class="temp__section-flex temp__section-flex--temp-control">
+        <div class="temp__section temp__section--bg-black">
+          <span class="temp__text">{{roomDetailsCtrl.currentRoom.thermostat}}</span>
+        </div>
+        <div class="button__group button__group--column">
+          <button class="button button--temp-control js-temp-plus-btn"
+          ng-click="roomDetailsCtrl.increaseTemp(roomDetailsCtrl.currentRoom)">
+            <span class="button__icon button__icon--plus">+</span>
+          </button>
+          <button class="button button--temp-control js-temp-minus-btn"
+            ng-click="roomDetailsCtrl.decreaseTemp(roomDetailsCtrl.currentRoom)">
+            <span class="button__icon button__icon--minus">-</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="room__controls">
+    <div class="button__section">
+      <div class="button__group-title">curtains</div>
+      <div class="button__group">
+        <button class="button button--default"
+        ng-class="{'button--active': roomDetailsCtrl.currentRoom.curtains}"
+        ng-click="roomDetailsCtrl.toggleDevice('curtains', roomDetailsCtrl.currentRoom)">open</button>
+        <button class="button button--default"
+        ng-class="{'button--active': ! roomDetailsCtrl.currentRoom.curtains}"
+        ng-click="roomDetailsCtrl.toggleDevice('curtains', roomDetailsCtrl.currentRoom)">closed</button>
+      </div>
+    </div>
+    <div class="button__section">
+      <div class="button__group-title">lights</div>
+      <div class="button__group">
+        <button class="button button--default"
+        ng-class="{'button--active': roomDetailsCtrl.currentRoom.lights}"
+        ng-click="roomDetailsCtrl.toggleDevice('lights', roomDetailsCtrl.currentRoom)">on</button>
+        <button class="button button--default"
+        ng-class="{'button--active': ! roomDetailsCtrl.currentRoom.lights}"
+        ng-click="roomDetailsCtrl.toggleDevice('lights', roomDetailsCtrl.currentRoom)">off</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="gb">
+<html lang="en" ng-app="thermostat">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Thermostat</title>
+  <link rel="stylesheet" href="src/css/main.css">
   <base href="/"></base>
 </head>
 <body>
-  <!-- <div ui-view="header"></div> -->
-  <div ui-view="home"></div>
+  <div ui-view="home" class="home"></div>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js" integrity="sha256-+f0njwC9E3IT9zDPry5DSIcGdSxQYezBaStQ4L0ZRfU=" crossorigin="anonymous"></script> -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js" integrity="sha256-e5SbGNdhJYKT++Es27SB9lEsr+fJMcJQtQ0YsOenJr4=" crossorigin="anonymous"></script> -->
   <script src="src/app.module.js"></script>
   <script src="src/app.config.js"></script>
+  <script src="src/homeService.js"></script>
   <script src="src/homeController.js"></script>
+  <script src="src/roomDetailsController.js"></script>
 </body>
 </html>

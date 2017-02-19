@@ -3,7 +3,7 @@
     "use strict";
 
     angular
-        .module("gb", [
+        .module("thermostat", [
           "ui.router" ]);
 
 })();

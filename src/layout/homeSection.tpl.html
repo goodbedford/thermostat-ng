@@ -1,14 +1,7 @@
 <div class="home__panel-rooms">
   <div class="home__panel-header">Rooms</div>
-  <div class="home__panel-item home__panel-item--active"
-    data-room-name="living room"
-    data-room-id="1"
-    ng-repeat="room in home.rooms">
-    <span class="home__text js-home-name">room.name</span>
-    <span class="home__text js-home-temp">room.thermostat</span>
-  </div>
-  <div class="home__panel-item" data-room-name="office" data-room-id="2">
-    <span class="home__text js-home-name">office</span>
-    <span class="home__text js-home-temp">50</span>
-  </div>
+  <div ui-view="rooms"></div>
+</div>
+<div class="home__panel-controls js-home-controls">
+  <div ui-view="roomDetails"><div class="block">Select A Room</div></div>
 </div>
