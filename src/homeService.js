@@ -17,8 +17,8 @@
         decreaseTemp: decreaseTemp,
 
       }
-
       return service;
+
       function init() {
         return $http.get("./src/home.json")
           .then(function(home) {
@@ -29,6 +29,13 @@
       function getHome() {
         if (currentHome) {
           return currentHome;
+        }
+        else {
+          return $http.get("./src/home.json")
+            .then(function(home) {
+              currentHome = home.data;
+              return currentHome;
+            });
         }
       }
       function getRoomById(id) {
@@ -44,12 +51,12 @@
         }
         else {
           room.thermostat += 1;
-          currentHome.rooms.forEach(function(roomItem) {
-               if(roomItem.roomId == room.roomId) {
-                 roomItem = room;
-               }
-          })
         }
+        currentHome.rooms.forEach(function(roomItem) {
+             if(roomItem.roomId == room.roomId) {
+               roomItem = room;
+             }
+        });
       }
       function decreaseTemp(room) {
         var num = room.thermostat - 1;
@@ -58,12 +65,12 @@
         }
         else {
           room.thermostat -= 1;
-          currentHome.rooms.forEach(function(roomItem) {
-               if(roomItem.roomId == room.roomId) {
-                 roomItem = room;
-               }
-          })
         }
+        currentHome.rooms.forEach(function(roomItem) {
+             if(roomItem.roomId == room.roomId) {
+               roomItem = room;
+             }
+        });
       }
     }
 

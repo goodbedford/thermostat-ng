@@ -23,6 +23,79 @@ h2 {
 /*-------------------------------------------------------*/
 
 
+/*controls*/
+
+
+/*-------------------------------------------------------*/
+
+.controls {
+  border: 1px solid transparent;
+  bottom: 0;
+  position: absolute;
+  margin: 20px;
+  width: calc(100% - 40px);
+}
+
+.controls__group {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.controls__icon {
+  border: 1px solid rgb(100, 200, 200);
+  color: rgb(100, 200, 200);
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: 0.3s all linear;
+}
+
+.controls__icon:hover {
+  background-color: rgb(47, 47, 47);
+  color: rgb(100, 200, 200);
+}
+
+
+/*-------------------------------------------------------*/
+
+
+/*form*/
+
+
+/*-------------------------------------------------------*/
+
+.form {}
+
+.form__group {
+  margin: 20px 0;
+}
+
+.form__group--bottom {
+  bottom: 0;
+  position: absolute;
+}
+
+.form__input {
+  background-color: rgb(47, 47, 47);
+  border: 1px solid rgb(100, 200, 200);
+  color: rgb(100, 200, 200);
+  font-size: 24px;
+}
+
+.form__label {
+  color: silver;
+  display: block;
+  font-size: 24px;
+  margin: 0 0 10px 0;
+}
+
+
+/*-------------------------------------------------------*/
+
+
 /*home*/
 
 
@@ -48,9 +121,13 @@ h2 {
   padding: 0 20px;
 }
 
-.home__section {
-  display: flex;
-  justify-content: space-between;
+.home__panel-controls {
+  background-color: rgb(47, 47, 47);
+  border: 1px solid black;
+  border-left: 0px;
+  flex: 1;
+  padding: 20px;
+  position: relative;
 }
 
 .home__panel-header {
@@ -98,15 +175,13 @@ h2 {
   border: 1px solid black;
   /*border-right: 0px;*/
   flex: 1;
-  /*padding: 10px;*/
+  position: relative;
 }
 
-.home__panel-controls {
-  background-color: rgb(47, 47, 47);
-  border: 1px solid black;
-  border-left: 0px;
-  flex: 1;
-  padding: 20px;
+.home__section {
+  display: flex;
+  justify-content: space-between;
+  min-height: 340px;
 }
 
 
@@ -372,4 +447,7 @@ h2 {
   background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
   background-color: #282828;
   background-size: 16px 16px;
+}
+
+
 }

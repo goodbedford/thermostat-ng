@@ -38,6 +38,9 @@
         },
         "rooms@home.rooms": {
           templateUrl: "src/layout/rooms.tpl.html",
+        },
+        "homeControls@home.rooms": {
+          templateUrl: "src/layout/homeControls.tpl.html",
         }
       }
     }
@@ -51,15 +54,25 @@
           controllerAs: "roomDetailsCtrl",
           resolve: {
             roomResolve: function($stateParams, HomeService) {
-              // debugger;
               return HomeService.getRoomById($stateParams.id);
-            }
+            },
           }
         }
       }
     }
+    var newRoomForm = {
+      name: "home.rooms.newRoomForm",
+      url: "/newRoom",
+      views: {
+        "roomDetails@home.rooms": {
+          templateUrl: "src/layout/newRoomForm.tpl.html"
+        }
+      }
+
+    }
     $stateProvider.state(homeState);
     $stateProvider.state(roomsState);
+    $stateProvider.state(newRoomForm);
     $stateProvider.state(roomDetailsState);
 
 		$urlRouterProvider.otherwise("/home/rooms");
