@@ -1,14 +1,15 @@
 <form action="" class="form" ng-submit="homeCtrl.submitRoom(homeCtrl.form)">
-  <div class="form__group">
-    <label class="form__label">Room Name:</label>
-    <input type="text" class="form__input" ng-model="homeCtrl.form.name">
-  </div>
-  <div class="form__group">
-    <label class="form__label">Thermostat:</label>
-    <input type="text" class="form__input" ng-model="homeCtrl.form.thermostat">
+  <div class="form__section form__section--main">
+    <div class="form__group">
+      <label class="form__label">Room Name:</label>
+      <input type="text" class="form__input" ng-model="homeCtrl.form.name">
+    </div>
+    <div class="form__group">
+      <label class="form__label">Thermostat:</label>
+      <input type="text" class="form__input" ng-model="homeCtrl.form.thermostat">
+    </div>
   </div>
   <div class="form__group form__group--bottom">
     <input type="submit" class="button button--default" >
   </div>
 </form>
-{{homeCtrl.form}}

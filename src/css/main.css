@@ -92,6 +92,13 @@ h2 {
   margin: 0 0 10px 0;
 }
 
+.form__section {}
+
+.form__section--main {
+  max-height: 200px;
+  overflow: scroll;
+}
+
 
 /*-------------------------------------------------------*/
 
@@ -182,6 +189,12 @@ h2 {
   display: flex;
   justify-content: space-between;
   min-height: 340px;
+}
+
+.home__section-rooms {
+  display: block;
+  overflow: scroll;
+  max-height: 200px;
 }
 
 

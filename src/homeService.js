@@ -15,6 +15,7 @@
         getRoomById: getRoomById,
         increaseTemp: increaseTemp,
         decreaseTemp: decreaseTemp,
+        saveRoom: saveRoom
 
       }
       return service;
@@ -71,6 +72,10 @@
                roomItem = room;
              }
         });
+      }
+
+      function saveRoom(room) {
+        currentHome.rooms.push(room);
       }
     }
 

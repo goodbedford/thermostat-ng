@@ -25,15 +25,21 @@
             });
         }
         function submitRoom() {
+
           console.log(vm.form);
           var newRoom = vm.form;
           var lastIndex = vm.home.rooms.length - 1;
           var newId = vm.home.rooms[lastIndex].roomId + 1;
-          newRoom.id = newId;
+          newRoom.thermostat = parseInt(newRoom.thermostat);
+          newRoom.roomId = newId;
           newRoom.curtains = false;
           newRoom.lights = true;
           newRoom.isActive = true;
-          vm.home.rooms.push(newRoom);
+
+
+          HomeService.saveRoom(newRoom);
+          vm.form = {};
+
         }
 
     }
