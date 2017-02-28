@@ -5,9 +5,9 @@
         .module("thermostat")
         .controller("HomeController", HomeController);
 
-    HomeController.$inject = ["$http", "$stateParams", "HomeService", "homeResolve"];
+    HomeController.$inject = ["$http", "$stateParams", "$state", "HomeService", "homeResolve"];
 
-    function HomeController($http, $stateParams, HomeService, homeResolve) {
+    function HomeController($http, $stateParams, $state, HomeService, homeResolve) {
         var vm = this;
         vm.changeRoom = changeRoom;
         vm.submitRoom = submitRoom;
@@ -39,6 +39,7 @@
 
           HomeService.saveRoom(newRoom);
           vm.form = {};
+          $state.go("home.rooms.details", {id: newRoom.roomId});
 
         }
 
