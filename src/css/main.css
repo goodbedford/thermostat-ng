@@ -16,7 +16,12 @@ h2 {
 }
 
 .block {
+  align-items: center;
+  color: rgb(100, 200, 200);
+  display: flex;
+  font-size: 28px;
   height: 300px;
+  justify-content: center;
 }
 
 
@@ -40,7 +45,11 @@ h2 {
   align-items: center;
   display: flex;
   justify-content: flex-start;
-  width: 100%;
+  /*width: 100%;*/
+}
+
+.controls__group--space-between {
+  justify-content: space-between;
 }
 
 .controls__icon {

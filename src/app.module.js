@@ -5,7 +5,7 @@
     angular
         .module("thermostat", [
           "ui.router",
-        "ngMessages"
+          "ngMessages"
       ]);
 
 })();
