@@ -206,6 +206,14 @@ h2 {
   color: black;
 }
 
+
+/* needs to be below hover for specificity*/
+
+.home__panel-item:active {
+  background-color: rgb(100, 215, 215);
+  color: black;
+}
+
 .home__panel-item--active {
   border-left: 10px solid black;
   border-right: 0px solid;
@@ -512,5 +520,7 @@ h2 {
   background-size: 16px 16px;
 }
 
+
+}
 
 }
