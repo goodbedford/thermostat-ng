@@ -35,10 +35,10 @@ h2 {
 
 .controls {
   border: 1px solid transparent;
-  bottom: 0;
-  position: absolute;
-  margin: 20px;
-  width: calc(100% - 40px);
+  /*bottom: 0;
+  position: absolute;*/
+  padding: 20px;
+  /*width: calc(100% - 40px);*/
 }
 
 .controls__group {
@@ -160,6 +160,15 @@ h2 {
   width: 700px;
 }
 
+
+/*smaller than screen*/
+
+@media screen and (max-width: 700px) {
+  .home--sm {
+    width: 100%;
+  }
+}
+
 .home__header {
   align-items: center;
   background-color: black;
@@ -237,10 +246,31 @@ h2 {
   position: relative;
 }
 
+.home__panel-rooms--column {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .home__section {
   display: flex;
   justify-content: space-between;
   min-height: 340px;
+}
+
+
+/*smaller than screen*/
+
+@media screen and (max-width: 700px) {
+  .home__section {
+    flex-direction: column-reverse;
+    ;
+  }
+}
+
+.home__section-group {
+  display: block;
 }
 
 .home__section-rooms {

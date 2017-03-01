@@ -3,7 +3,7 @@
   <div class="form__section form__section--main">
     <div class="form__group">
       <label class="form__label">Room Name:</label>
-      <input name="name" type="text" class="form__input" ng-model="homeCtrl.newRoomForm.name" ng-minlength="3" ng-maxlength="25" placeholder="Ex. dinning room" required>
+      <input name="name" type="text" class="form__input" ng-model="homeCtrl.newRoomForm.name" ng-minlength="3" ng-maxlength="20" placeholder="Ex. dinning room" required>
     </div>
     <div class="error-block" ng-messages="newRoomForm.name.$error" ng-if="newRoomForm.name.$touched">
       <div ui-view="error"></div>
