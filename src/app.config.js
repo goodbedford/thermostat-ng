@@ -66,6 +66,9 @@
       views: {
         "roomDetails@home.rooms": {
           templateUrl: "src/layout/newRoomForm.tpl.html"
+        },
+        "error@home.rooms.newRoomForm": {
+          templateUrl: "src/layout/error.tpl.html"
         }
       }
 

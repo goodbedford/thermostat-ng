@@ -14,7 +14,7 @@
         vm.currentRoom;
         vm.home = homeResolve;
         vm.date = (new Date()).toDateString();
-        vm.form = {};
+        vm.newRoomForm = {};
 
         //this function takes a roomId
         function changeRoom(id) {
@@ -24,23 +24,24 @@
               }
             });
         }
-        function submitRoom() {
-
-          console.log(vm.form);
-          var newRoom = vm.form;
+        function submitRoom(isValid) {
+          console.log(vm.newRoomForm);
+          var defaultTemp = 55;
+          var newRoom = vm.newRoomForm;
           var lastIndex = vm.home.rooms.length - 1;
           var newId = vm.home.rooms[lastIndex].roomId + 1;
-          newRoom.thermostat = parseInt(newRoom.thermostat);
+          newRoom.thermostat =  defaultTemp;
           newRoom.roomId = newId;
           newRoom.curtains = false;
           newRoom.lights = true;
           newRoom.isActive = true;
 
-
-          HomeService.saveRoom(newRoom);
-          vm.form = {};
-          $state.go("home.rooms.details", {id: newRoom.roomId});
-
+          if(isValid) {
+            HomeService.saveRoom(newRoom);
+            vm.newRoomForm = {name: "", thermostat:""};
+            $state.go("home.rooms.details", {id: newRoom.roomId});
+          }
+          vm.newRoomForm = {name: "", thermostat:""};
         }
 
     }

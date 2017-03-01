@@ -62,7 +62,25 @@ h2 {
 /*-------------------------------------------------------*/
 
 
-/*form*/
+/* error-block */
+
+
+/*-------------------------------------------------------*/
+
+.error-block {
+  color: tomato;
+}
+
+;
+.error-block__msg {
+  font-size: 12px;
+}
+
+
+/*-------------------------------------------------------*/
+
+
+/* form */
 
 
 /*-------------------------------------------------------*/
@@ -70,7 +88,7 @@ h2 {
 .form {}
 
 .form__group {
-  margin: 20px 0;
+  /*margin: 10px 0;*/
 }
 
 .form__group--bottom {
@@ -78,17 +96,34 @@ h2 {
   position: absolute;
 }
 
+.form__header {
+  align-items: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  /*color: silver;*/
+  color: rgb(100, 200, 200);
+  display: flex;
+  flex: 1;
+  font-size: 24px;
+  justify-content: center;
+  padding: 10px;
+  text-transform: uppercase;
+  transition: 0.3s background-color;
+}
+
 .form__input {
   background-color: rgb(47, 47, 47);
   border: 1px solid rgb(100, 200, 200);
   color: rgb(100, 200, 200);
-  font-size: 24px;
+  font-size: 18px;
+  padding: 10px;
+  width: 100%;
 }
 
 .form__label {
-  color: silver;
+  color: rgb(100, 200, 200);
   display: block;
-  font-size: 24px;
+  font-size: 20px;
   margin: 0 0 10px 0;
 }
 
@@ -97,6 +132,7 @@ h2 {
 .form__section--main {
   max-height: 200px;
   overflow: scroll;
+  padding: 20px;
 }
 
 
@@ -133,7 +169,7 @@ h2 {
   border: 1px solid black;
   border-left: 0px;
   flex: 1;
-  padding: 20px;
+  /*padding: 20px;*/
   position: relative;
 }
 
@@ -180,7 +216,6 @@ h2 {
 .home__panel-rooms {
   background-color: rgb(63, 67, 74);
   border: 1px solid black;
-  /*border-right: 0px;*/
   flex: 1;
   position: relative;
 }
@@ -212,6 +247,20 @@ h2 {
   align-items: center;
   display: flex;
   justify-content: space-around;
+}
+
+.room__header {
+  align-items: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  color: rgb(100, 200, 200);
+  display: flex;
+  flex: 1;
+  font-size: 24px;
+  justify-content: center;
+  padding: 10px;
+  text-transform: uppercase;
+  transition: 0.3s background-color;
 }
 
 .room__section {
@@ -306,13 +355,13 @@ h2 {
 
 .temp {
   display: block;
-  height: 200px;
-  padding: 20px;
-  width: 200px;
+  height: 150px;
+  /*padding: 20px;*/
+  width: 150px;
 }
 
 .temp--center {
-  margin: auto;
+  margin: 20px auto;
 }
 
 .temp__input {
@@ -429,7 +478,8 @@ h2 {
 }
 
 .button__group-title {
-  color: silver;
+  /*color: silver;*/
+  color: rgb(100, 200, 200);
   font-size: 18px;
   margin: 0 0 5px 0;
   text-transform: uppercase;
