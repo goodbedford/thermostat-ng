@@ -20,8 +20,16 @@ h2 {
   color: rgb(100, 200, 200);
   display: flex;
   font-size: 28px;
-  height: 300px;
+  height: 336px;
   justify-content: center;
+}
+
+.block-controls {
+  padding-left: 132px;
+}
+
+.block-tall {
+  height: 100%;
 }
 
 
@@ -35,17 +43,30 @@ h2 {
 
 .controls {
   border: 1px solid transparent;
-  /*bottom: 0;
-  position: absolute;*/
-  padding: 20px;
-  /*width: calc(100% - 40px);*/
+  color: rgb(100, 200, 200);
+  height: 50px;
+  padding: 0 10px;
+}
+
+.controls-flex {
+  display: flex;
+  width: 100%;
+}
+
+.controls-flex--center-start {
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .controls__group {
   align-items: center;
   display: flex;
   justify-content: flex-start;
-  /*width: 100%;*/
+  width: 100%;
+}
+
+.controls__group--tall {
+  height: 100%;
 }
 
 .controls__group--space-between {
@@ -53,18 +74,49 @@ h2 {
 }
 
 .controls__icon {
+  align-items: center;
   border: 1px solid rgb(100, 200, 200);
   color: rgb(100, 200, 200);
   cursor: pointer;
-  font-size: 24px;
+  display: flex;
+  font-size: 20px;
   font-weight: bold;
-  padding: 10px 20px;
+  justify-content: center;
   transition: 0.3s all linear;
+}
+
+.controls__icon--sm {
+  border: 1px solid transparent;
+  height: 90%;
+  width: 48px;
+}
+
+.controls__icon--sm-margin {
+  margin: 0 0 0 10px;
 }
 
 .controls__icon:hover {
   background-color: rgb(47, 47, 47);
+  border: 1px solid rgb(47, 47, 47);
+  /*box-shadow: inset 0 0 0 3px rgb(100, 200, 200);*/
   color: rgb(100, 200, 200);
+}
+
+.controls__text {
+  color: rgb(100, 200, 200);
+  font-size: 24px;
+}
+
+.controls__text-btn {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 90%;
+  padding: 0 10px;
+}
+
+.controls__text:hover {
+  background-color: rgb(47, 47, 47);
 }
 
 

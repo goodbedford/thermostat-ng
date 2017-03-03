@@ -24,7 +24,7 @@
           resolve: {
             homeResolve: function (HomeService) {
               return HomeService.init();
-            }
+            },
           }
         }
       }
@@ -53,10 +53,17 @@
           controller: "RoomDetailsController",
           controllerAs: "roomDetailsCtrl",
           resolve: {
-            roomResolve: function($stateParams, HomeService) {
+            roomResolve: function($stateParams, $state, HomeService) {
+              if($stateParams.id === "" ) {
+                $state.go("home.rooms");
+              }
+
               return HomeService.getRoomById($stateParams.id);
             },
           }
+        },
+        "roomsControlsBtns@home.rooms": {
+          templateUrl: "src/layout/roomsControlsBtns.tpl.html",
         }
       }
     }

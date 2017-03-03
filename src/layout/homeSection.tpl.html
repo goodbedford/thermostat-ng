@@ -1,9 +1,9 @@
 <div class="home__panel-rooms home__panel-rooms--column">
   <div class="home__section-group">
-    <div class="home__panel-header">{{homeCtrl.home.rooms.length}} Rooms</div>
+    <!-- <div class="home__panel-header">{{homeCtrl.home.rooms.length}} Rooms</div> -->
+    <div ui-view="homeControls" class="controls controls-flex controls-flex--center-start"></div>
     <div ui-view="rooms" class="home__section-rooms"></div>
   </div>
-  <div ui-view="homeControls" class="controls"></div>
 </div>
 <div class="home__panel-controls js-home-controls">
   <div ui-view="roomDetails">

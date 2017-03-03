@@ -7,23 +7,15 @@
 
     HomeController.$inject = ["$http", "$stateParams", "$state", "HomeService", "homeResolve"];
 
-    function HomeController($http, $stateParams, $state, HomeService, homeResolve) {
+    function HomeController($http, $stateParams, $state, HomeService, homeResolve ) {
         var vm = this;
-        vm.changeRoom = changeRoom;
         vm.submitRoom = submitRoom;
-        vm.currentRoom;
+        vm.currentRoomId = $state.params.id;
         vm.home = homeResolve;
         vm.date = (new Date()).toDateString();
         vm.newRoomForm = {};
 
-        //this function takes a roomId
-        function changeRoom(id) {
-            vm.home.rooms.filter(function roomFilter(room){
-              if (room.roomId == id) {
-                vm.currentRoom = room;
-              }
-            });
-        }
+
         function submitRoom(isValid) {
           console.log(vm.newRoomForm);
           var defaultTemp = 55;

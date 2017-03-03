@@ -1,7 +1,6 @@
 <div class="home__panel-item"
   data-room-name="{{room.name}}"
   data-room-id="{{room.roomId}}"
-  ng-click="homeCtrl.changeRoom(room.roomId)"
   ui-sref="home.rooms.details({id: room.roomId})"
   ui-sref-active="home__panel-item--active"
   ng-repeat="room in homeCtrl.home.rooms">
