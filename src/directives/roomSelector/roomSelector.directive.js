@@ -73,6 +73,9 @@
         if(rooms[prevRoom]) {
           return rooms[prevRoom].roomId;
         }
+        else {
+          return currentRoomId;
+        }
       }
     }
     return currentRoomId;
