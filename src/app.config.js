@@ -54,7 +54,7 @@
           controllerAs: "roomDetailsCtrl",
           resolve: {
             roomResolve: function($stateParams, $state, HomeService) {
-              if($stateParams.id === "" ) {
+              if($state.params.id === "" ) {
                 $state.go("home.rooms");
               }
 
