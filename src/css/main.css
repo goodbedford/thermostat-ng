@@ -48,8 +48,12 @@ h2 {
 .controls {
   border: 1px solid transparent;
   color: rgb(100, 200, 200);
-  height: 50px;
+  height: 48px;
   padding: 0 10px;
+}
+
+.controls--submit {
+  margin-bottom: 20px;
 }
 
 .controls-flex {
