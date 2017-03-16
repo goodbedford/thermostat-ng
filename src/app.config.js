@@ -1,99 +1,144 @@
 (function () {
-	"use strict";
+  "use strict";
 
-	angular
+  angular
 		.module("thermostat")
 		.config(config);
 
-	config.$inject = ["$locationProvider", "$stateProvider", "$urlRouterProvider"];
+  config.$inject = ["$locationProvider", "$stateProvider", "$urlRouterProvider"];
 
-	function config($locationProvider, $stateProvider, $urlRouterProvider) {
+  function config($locationProvider, $stateProvider, $urlRouterProvider) {
+
 
     var homeState = {
-      abstract: true,
-      name: "home",
-      url: "/home",
+      // abstract: true,
+      name: "homes",
+      url: "/homes",
       views: {
-        "header@home": {
-          templateUrl: "src/layout/header.tpl.html"
-        },
-        "home": {
-          templateUrl: "src/layout/home.tpl.html",
+        "homes": {
+          templateUrl: "src/layout/homes.tpl.html",
           controller: "HomeController",
           controllerAs: "homeCtrl",
           resolve: {
-            homeResolve: function (HomeService) {
+            homesResolve: function (HomeService) {
+              // debugger;
               return HomeService.init();
             },
           }
-        }
+        },
+        "header@homes": {
+          templateUrl: "src/layout/header.tpl.html"
+        },
+        "homeSection@homes": {
+          templateUrl: "src/layout/homeSection.tpl.html"
+        },
       }
-    }
+    };
+    var homesList = {
+      name: "homes.homesList",
+      parent: "homes",
+      url: "/homes-list",
+      views: {
+        "panelItems@homes": {
+          templateUrl: "src/layout/homesItem.tpl.html"
+        },
+        "controls@homes": {
+          templateUrl: "src/layout/homeControls.tpl.html",
+        },
+      }
+    };
+    var homeDetailsState = {
+      abstract: true,
+      name: "homes.homesDetails",
+      parent: "homes",
+      url: "/:homeId",
+    };
     var roomsState = {
-      name: "home.rooms",
+      name: "homes.homesDetails.rooms",
+      parent: "homes.homesDetails",
       url: "/rooms",
       views: {
-        "homeSection@home": {
-          templateUrl: "src/layout/homeSection.tpl.html",
+        "controls@homes": {
+          templateUrl: "src/layout/roomControls.tpl.html",
         },
-        "rooms@home.rooms": {
+        "panelItems@homes": {
           templateUrl: "src/layout/rooms.tpl.html",
+          controller: "HomeDetailsController",
+          controllerAs: "homeDetailsCtrl",
+          resolve: {
+            homeDetailsResolved: function($stateParams, HomeService) {
+              return HomeService.getRooms($stateParams.homeId);
+            }
+          },
         },
-        "homeControls@home.rooms": {
-          templateUrl: "src/layout/homeControls.tpl.html",
+      }
+    };
+    var newHomeForm = {
+      name: "homes.newHomeForm",
+      parent: "homes",
+      url: "/newRoom",
+      views: {
+        "roomDetails@homes": {
+          templateUrl: "src/layout/newHomeForm.tpl.html"
+        },
+        "error@homes.newRoomForm": {
+          templateUrl: "src/layout/error.tpl.html"
         }
       }
-    }
+    };
     var roomDetailsState = {
-      name: "home.rooms.details",
+      name: "homes.homesDetails.rooms.roomDetails",
+      parent: "homes.homesDetails.rooms",
       url: "/:id",
       views: {
-        "roomDetails@home.rooms": {
+        "roomDetails@homes": {
           templateUrl: "src/layout/roomDetails.tpl.html",
           controller: "RoomDetailsController",
           controllerAs: "roomDetailsCtrl",
           resolve: {
             roomResolve: function($stateParams, $state, HomeService) {
               if($state.params.id === "" ) {
-                $state.go("home.rooms");
+                $state.go("homes.homesList");
               }
-
-              return HomeService.getRoomById($stateParams.id);
+              return HomeService.getRoomById($stateParams.homeId, $stateParams.id);
             },
           }
         },
-        "roomsControlsBtns@home.rooms": {
+        "roomsControlsBtns@homes": {
           templateUrl: "src/layout/roomsControlsBtns.tpl.html",
         }
       }
-    }
+    };
     var newRoomForm = {
-      name: "home.rooms.newRoomForm",
+      name: "homes.homesDetails.rooms.newRoomForm",
+      parent: "homes.homesDetails.rooms",
       url: "/newRoom",
       views: {
-        "roomDetails@home.rooms": {
+        "roomDetails@homes": {
           templateUrl: "src/layout/newRoomForm.tpl.html"
         },
-        "error@home.rooms.newRoomForm": {
+        "error@homes.homesDetails.rooms.newRoomForm": {
           templateUrl: "src/layout/error.tpl.html"
         }
       }
-
-    }
+    };
     $stateProvider.state(homeState);
+    $stateProvider.state(homesList);
+    $stateProvider.state(homeDetailsState);
+    $stateProvider.state(newHomeForm);
     $stateProvider.state(roomsState);
     $stateProvider.state(newRoomForm);
     $stateProvider.state(roomDetailsState);
 
-		$urlRouterProvider.otherwise("/home/rooms");
+    $urlRouterProvider.otherwise("/homes/homes-list");
 
 
 
-		//remove hash in urls
-		$locationProvider.html5Mode({
-			enabled: false,
-			requireBase: false
-		});
-	}
+  //remove hash in urls
+    $locationProvider.html5Mode({
+      enabled: false,
+      requireBase: false
+    });
+  }
 
 })();

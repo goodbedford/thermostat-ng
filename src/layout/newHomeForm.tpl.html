@@ -1,0 +1,20 @@
+<form name="newRoomForm" class="form" ng-submit="homeCtrl.submitRoom(newRoomForm.$valid)" nonvalidate>
+  <div class="form__header">Add a home</div>
+  <div class="form__section form__section--main">
+    <div class="form__group">
+      <label class="form__label">Home Name:</label>
+      <input name="name" type="text" class="form__input" ng-model="homeCtrl.newRoomForm.name" ng-minlength="3" ng-maxlength="20" placeholder="Ex. dinning room" required>
+    </div>
+    <div class="error-block" ng-messages="newRoomForm.name.$error" ng-if="newRoomForm.name.$touched">
+      <div ui-view="error"></div>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="controls__group">
+      <input type="submit" class="button button--default" ng-disabled="newRoomForm.$invalid" >
+    </div>
+  </div>
+  <!-- <div class="form__group form__group--bottom">
+    <input type="submit" class="button button--default" ng-disabled="newRoomForm.$invalid" >
+  </div> -->
+</form>

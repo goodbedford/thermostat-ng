@@ -1,40 +1,37 @@
 (function() {
-    "use strict";
+  "use strict";
 
-    angular
-        .module("thermostat")
-        .controller("HomeController", HomeController);
+  angular
+      .module("thermostat")
+      .controller("HomeController", HomeController);
 
-    HomeController.$inject = ["$http", "$stateParams", "$state", "HomeService", "homeResolve"];
+  HomeController.$inject = ["$http", "$stateParams", "$state", "HomeService", "homesResolve"];
 
-    function HomeController($http, $stateParams, $state, HomeService, homeResolve ) {
-        var vm = this;
-        vm.submitRoom = submitRoom;
-        vm.currentRoomId = $state.params.id;
-        vm.home = homeResolve;
-        vm.date = (new Date()).toDateString();
-        vm.newRoomForm = {};
+  function HomeController($http, $stateParams, $state, HomeService, homesResolve ) {
+    var vm = this;
+    vm.submitRoom = submitRoom;
+    vm.currentRoomId = $state.params.id;
+    vm.homes = homesResolve;
+    vm.date = (new Date()).toDateString();
+    vm.newRoomForm = {};
 
 
-        function submitRoom(isValid) {
-          console.log(vm.newRoomForm);
-          var defaultTemp = 55;
-          var newRoom = vm.newRoomForm;
-          var lastIndex = vm.home.rooms.length - 1;
-          var newId = vm.home.rooms[lastIndex].roomId + 1;
-          newRoom.thermostat =  defaultTemp;
-          newRoom.roomId = newId;
-          newRoom.curtains = false;
-          newRoom.lights = true;
-          newRoom.isActive = true;
+    function submitRoom(isValid) {
+      console.log(vm.newRoomForm);
+      var defaultTemp = 55;
+      var newRoom = vm.newRoomForm;
+      newRoom.thermostat =  defaultTemp;
+      newRoom.curtains = false;
+      newRoom.lights = true;
 
-          if(isValid) {
-            HomeService.saveRoom(newRoom);
+      if(isValid) {
+        HomeService.createRoom(newRoom)
+          .then(function(savedRoom) {
             vm.newRoomForm = {name: "", thermostat:""};
-            $state.go("home.rooms.details", {id: newRoom.roomId});
-          }
-          vm.newRoomForm = {name: "", thermostat:""};
-        }
-
+            $state.go("homes.homesDetails.rooms.roomDetails", {homeId: $state.params.homeId, id: savedRoom._id},{reload: true});
+          });
+      }
+      vm.newRoomForm = {name: "", thermostat:""};
     }
+  }
 })();

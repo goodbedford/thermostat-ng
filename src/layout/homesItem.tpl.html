@@ -1,0 +1,8 @@
+<div class="home__panel-item"
+  data-home-name="{{home.name}}"
+  data-home-id="{{home._id}}"
+  ui-sref="homes.homesDetails.rooms({homeId: home._id})"
+  ui-sref-active="home__panel-item--active"
+  ng-repeat="home in homeCtrl.homes">
+  <span class="home__text js-home-name">{{home.name}}</span>
+</div>

@@ -1,9 +1,9 @@
 <div class="home__panel-item"
   data-room-name="{{room.name}}"
-  data-room-id="{{room.roomId}}"
-  ui-sref="home.rooms.details({id: room.roomId})"
+  data-room-id="{{room._id}}"
+  ui-sref="homes.homesDetails.rooms.roomDetails({homeId: homeDetailsCtrl.homeId, id: room._id})"
   ui-sref-active="home__panel-item--active"
-  ng-repeat="room in homeCtrl.home.rooms">
-  <span class="home__text js-home-name">{{room.name}}</span>
-  <span class="home__text js-home-temp">{{room.thermostat}}</span>
+  ng-repeat="room in homeDetailsCtrl.rooms">
+  <span class="home__text js-room-name">{{room.name}}</span>
+  <!-- <span class="home__text js-room-temp">{{room.thermostat}}</span> -->
 </div>
